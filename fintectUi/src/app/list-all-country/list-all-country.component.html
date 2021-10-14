@@ -1,0 +1,38 @@
+
+<div class="row container mt-5">
+
+    <div class="col-md-4">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Capital Name"
+          aria-describedby="basic-addon2"
+          (keyup)="searchCountry($event)"
+        >
+      </div>
+
+    </div>
+   <div class="col-md-8">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Region</th>
+            <th scope="col">Capital</th>
+            <th scope="col">flag</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of allCountry$ | async">
+            <th scope="row">{{country.name}}</th>
+            <td>{{country.region}}</td>
+            <td>{{country.capital}}</td>
+            <td><img src="{{country.flag}}" width="30px" height="30px" alt=""></td>
+          </tr>
+        </tbody>
+    </table>
+
+   </div>
+
+</div>
